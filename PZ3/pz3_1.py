@@ -7,13 +7,9 @@ while True:  # Обработка исключений
         c = float(input("Введите третье число >> "))
 
         if (a > 0) or (b > 0) or (c > 0):
-            if a > 0:
-                print("A положительно: ", a)
-            if b > 0:
-                print("B положительно: ", b)
-            if c > 0:
-                print("C положительно: ", c)
-
+            print(True)
+        else:
+            print(False)
         break
 
     except ValueError:

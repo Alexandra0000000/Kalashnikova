@@ -23,4 +23,4 @@ arr = [random.randint(-10, 50) for _ in range(int(input('Введите коли
 print(arr)
 result = find_closest_elements(R, arr)
 if result:
-    print("Ближайшие соседние индексы списка >>> ", result[0], result[1])
+    print("Ближайшие соседние элементы списка >>> ", arr[result[0]], arr[result[1]])

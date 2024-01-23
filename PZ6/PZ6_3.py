@@ -4,15 +4,11 @@
 A1, а исходное значение K первых элементов будет потеряно). Последние K
 элементов полученного списка положить равными 0.
 """
-def shift_and_zero(lst, k):
-    new_lst = [0] * len(lst)
-    for i in range(len(lst) - k):
-        new_lst[i - k] = lst[i]
-    return new_lst
 
 lst = [1,3,5,6,7,4,9]
 k = 2
+lst = lst[k:] + ([0] * k)
 if k < 1 or k >= len(lst):
     print('Ошибка! Введено неверное число k')
 else:
-    print(shift_and_zero(lst, k))
+    print(lst)

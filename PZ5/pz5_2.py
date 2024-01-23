@@ -8,7 +8,6 @@ def ShiftRight3(A, B, C):
     B = temp
     return A, B, C
 
-# наборы чисел
 A1, B1, C1 = 1, 2, 3
 A2, B2, C2 = 4, 5, 6
 
