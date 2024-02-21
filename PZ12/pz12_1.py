@@ -1,15 +1,9 @@
 # Проверить есть ли в последовательности целых N чисел число K
-def check_number(sequence, k):
-    if k in sequence:
-        return True
-    else:
-        return False
-
-N = int(input('Введите количество чисел последовательности >>> '))
-sequence = list(range(1, N+1))
-K = int(input('Введите число K>>> '))
-
-if check_number(sequence, K):
-    print(f"Число {K} есть в последовательности {sequence}")
+def is_k_in_sequence(sequence, k):
+    return any(map(lambda x: x == k, sequence))
+sequence = [1, 2, 3, 4, 5]
+k = 3
+if is_k_in_sequence(sequence, k):
+    print(f"{k} есть в последовательности")
 else:
-    print(f"Числа {K} нет в последовательности {sequence}")
+    print(f"{k} нет в последовательности")
