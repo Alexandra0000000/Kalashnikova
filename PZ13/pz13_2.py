@@ -1,21 +1,13 @@
 # В матрице найти максимальный положительный элемент, кратный 4.
-matrix = [
-    [1, 2, 8],
-    [-4, 5, 6],
-    [7, -8, 12]
-]
+import numpy as np
 
-def is_positive(num):
-    return num > 0 and num % 4 == 0
+matrix = [[1, 2, 8],
+          [-4, 5, 6],
+          [7, -8, 12]]
 
-def get_max_positive(matrix):
-    max_value = None
-    for row in matrix:
-        for element in row:
-            if is_positive(element):
-                if max_value is None or element > max_value:
-                    max_value = element
+def max_poz(matrix):
+    filtered_matrix = list(filter(lambda x: x > 0 and x % 4 == 0, np.array(matrix).ravel()))
+    max_value = max(filtered_matrix, key=abs, default=None)
     return max_value
 
-result = get_max_positive(matrix)
-print("Максимальный положительный элемент, кратный 4:", result)
+print(max_poz(matrix))
