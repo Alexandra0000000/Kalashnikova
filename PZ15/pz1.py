@@ -66,3 +66,15 @@ with sq.connect('tovarny_zapas.db') as con:
     cur.execute("DELETE FROM tovary WHERE tovary_id = 9")
     result = cur.fetchall()
     print(result)
+
+with sq.connect('tovarny_zapas.db') as con:
+    cur = con.cursor()
+    cur.execute("DELETE FROM tovary WHERE marka = 'Puma'")
+    result = cur.fetchall()
+    print(result)
+
+with sq.connect('tovarny_zapas.db') as con:
+    cur = con.cursor()
+    cur.execute("DELETE FROM tovary WHERE kolvo < 9 AND min_zapas < 3")
+    result = cur.fetchall()
+    print(result)
